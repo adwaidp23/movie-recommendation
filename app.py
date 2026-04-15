@@ -8,6 +8,9 @@ import os
 
 app = Flask(__name__)
 
+# Secure the app with a secret key from environment variable
+app.secret_key = os.environ.get('SECRET_KEY', 'dev-secret-key-change-this-in-production')
+
 # --- CONFIG: path to your CSV (adjust if needed) ---
 DATA_PATH = "./mnt/data/netflix_data.csv"  # developer message said it's uploaded here
 
